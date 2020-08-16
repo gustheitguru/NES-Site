@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8-bit Portfolio</title>
+	<!-- local CSS -->
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<!-- BootStrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- NES  -->
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    
+</head>
+<body class="text-center full-body">
+	<div class="container p-3 d-flex flex-colum h-100 mx-auto">
+		<header class="mb-auto">
+			<h3 class="masthead-brand">
+				<i class="nes-icon trophy"></i> 
+				Mario Mario
+			</h3>
+			<nav class="nav nav-masthead justify-content-center">			
+				<a class="nav-link" href="index.html">Home</a>
+				<a class="nav-link active" href="Portfolio.html">Portfolio</a>
+				<a class="nav-link" href="cv.html">CV</a>
+				<a class="nav-link" href="cm.html">Contact Me</a>
+			</nav>
+		</header>
+	</div>
+	<main>
+		<div class="container nes-container">
+			<div class="col-md-12">
+				<h3>Gallery</h3>
+			</div>			
+			<div class="col-md-12">				
+			<button type="button" class="nes-btn filter-button" data-filter="all">All</button>
+			<button type="button" class="nes-btn is-success filter-button" data-filter="pipe">Pipe</button>
+			<button type="button" class="nes-btn is-warning filter-button" data-filter="star">Star</button>
+			<button type="button" class="nes-btn is-error filter-button" data-filter="flags">Flags</button>
+			<button type="button" class="nes-btn is-primary filter-button" data-filter="mushrooms">Mushrooms</button>
+			</div>
+		<br>
+		<div class="row md-4">
+			<div class="m-auto nes-pointer col-md-4 filter star">
+				<img src="assets/img/portfolio/cabin.png"
+				class="img-responsive"/>
+			</div>
+			<div class="m-auto nes-pointer col-md-4 filter pipe">
+				<img src="assets/img/portfolio/cake.png"
+				class="img-responsive"/>
+			</div>
+			<div class="m-auto nes-pointer col-md-4 filter flags">
+				<img src="assets/img/portfolio/circus.png"
+				class="img-responsive"/>
+			</div>
+		</div>
+		<br>
+		<div class="row md-4">
+			<div class="m-auto nes-pointer col-md-4 filter mushrooms">
+				<img src="assets/img/portfolio/game.png"
+				class="img-responsive"/>
+			</div>
+			<div class="m-auto nes-pointer col-md-4">
+				<img src="assets/img/portfolio/safe.png"
+				class="img-responsive"/>
+			</div>
+			<div class="m-auto nes-pointer col-md-4 filter star">
+				<img src="assets/img/portfolio/submarine.png"
+				class="img-responsive"/>
+			</div>
+		</div>
+		<br>
+		<div class="row md-4">
+			<div class="m-auto nes-pointer col-md-4 filter mushrooms">
+				<img src="assets/img/portfolio/cake.png"
+				class="img-responsive"/>
+			</div>
+			<div class="m-auto nes-pointer col-md-4 filter flag">
+				<img src="assets/img/portfolio/game.png"
+				class="img-responsive"/>
+			</div>
+			<div class="m-auto nes-pointer col-md-4 filter star">
+				<img src="assets/img/portfolio/cabin.png"
+				class="img-responsive"/>
+			</div>
+		</div>
+
+		</div>
+	</main>
+	<footer class="mt-auto">
+			Website made with <i class="nes-icon is-small heart"></i>, Made by <a href="./index.html">Augusto J. Rodriguez</a>
+		</footer>	
+<!-- JS Scripts for bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+		// JQuery function to do filtering "filter stype" on image and filter-button" data-filter on buttons
+		$(document).ready(()=>{
+			$(".filter-button").click(function(){
+				let filterVal = $(this).attr("data-filter");
+				console.log(filterVal);
+				if(filterVal == "all"){
+					$(".filter").show('1000');
+				} else {
+					$(".filter").not("." + filterVal).hide("3000");
+					$(".filter").filter("." + filterVal).show("3000");
+				}				
+			});
+		});
+	</script>
+</body>
+</html>
+
+
